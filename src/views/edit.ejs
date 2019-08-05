@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simulador recorridos</title>
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+
+<div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <form action="/edit/<%= recorrido._id %>" method="post">
+            <div class="form-group">
+              <label>Selecciona horario: </label>
+              <input type="date" name="horario"  value="<%= recorrido.horario %>">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="origen" placeholder="Escribe el origen ej: Los lagos" value="<%= recorrido.origen %>">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="destino" 
+                placeholder="Escribe el destino ej: Valdivia" value="<%= recorrido.destino %>">
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Agregar recorrido
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
