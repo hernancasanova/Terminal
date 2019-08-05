@@ -17,5 +17,24 @@ router.post('/add', async (req, res, next) => {
   res.redirect('/');
 });
 
+router.get("/delete/:id", async (req,res) => {
+    const { id }= req.params;
+    await Recorrido.remove({_id: id});
+    res.redirect("/");
+});
+
+router.get("/edit/:id", async (req,res) => {
+    const { id }= req.params;
+    const recorrido = await Recorrido.findById(id);
+    res.render("edit", {
+    	recorrido
+    });
+});
+
+router.post("/edit/:id", async (req,res) => {
+    const { id }= req.params;
+    await Recorrido.update({_id :id}, req.body);
+    res.redirect("/");
+});
 
 module.exports = router;
